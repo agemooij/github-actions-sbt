@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM openjdk:8-jdk-alpine
 
 LABEL "com.github.actions.name"="sbt"
 LABEL "com.github.actions.description"="Executes sbt build commands"
