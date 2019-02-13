@@ -1,6 +1,6 @@
 Simple dockerfile for building sbt-based projects using Github Actions.
 
-- Base image: openjdk:8-jre-alpine
+- Base image: openjdk:8-jdk-alpine
 - Sbt version: 1.2.8
 - Entrypoint: sbt
 - Extra Alpine packages installed: bash, git
