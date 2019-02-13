@@ -14,7 +14,6 @@ COPY bintray-credentials.sbt /github/home/.sbt/1.0/
 RUN apk --no-cache --update add bash wget && mkdir -p "$sbt_home" && \
     wget -qO - --no-check-certificate "https://github.com/sbt/sbt/releases/download/v$sbt_version/sbt-$sbt_version.tgz" | tar xz -C $sbt_home --strip-components=1 && \
     apk del wget && \
-    mkdir  && \
     sbt sbtVersion
 
 ENTRYPOINT ["sbt"]
