@@ -9,7 +9,8 @@ ENV sbt_version 1.2.8
 ENV sbt_home /usr/local/sbt
 ENV PATH ${PATH}:${sbt_home}/bin
 
-COPY bintray-credentials.sbt /github/home/.sbt/1.0/
+# Even though the docs say that HOME points to /github/home, SBT looks in /root for its config
+COPY bintray-credentials.sbt /root/.sbt/1.0/
 
 RUN apk --no-cache --update add bash wget && mkdir -p "$sbt_home" && \
     wget -qO - --no-check-certificate "https://github.com/sbt/sbt/releases/download/v$sbt_version/sbt-$sbt_version.tgz" | tar xz -C $sbt_home --strip-components=1 && \
